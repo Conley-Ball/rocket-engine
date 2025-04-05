@@ -1,0 +1,39 @@
+phases:
+- name: liquid_water
+  thermo: ideal-gas
+  elements: [H, O]
+  species: [H2O(L)]
+- name: liquid_ethanol
+  thermo: ideal-gas
+  elements: [H, O, C]
+  species: [C2H5OH(L)]
+- name: liquid_oxygen
+  thermo: ideal-gas
+  elements: [O]
+  species: [O2(L)]
+
+species:
+- name: O2(L)
+  composition: {O: 2}
+  thermo:
+    model: constant-cp
+    T0: 90.170
+    h0: -12979.0 J/mol
+    s0: 0.0
+    cp0: 0.0
+- name: H2O(L)
+  composition: {H: 2, O: 1}
+  thermo:
+    model: constant-cp
+    T0: 298.15
+    h0: -285830.0 J/mol
+    s0: 0.0
+    cp0: 4184.0
+- name: C2H5OH(L)
+  composition: {C: 2, H: 6, O: 1}
+  thermo:
+    model: constant-cp
+    T0: 298.15
+    h0: -277510.0 J/mol
+    s0: 0.0
+    cp0: 2490.0
